@@ -10,11 +10,11 @@ document.addEventListener('DOMContentLoaded',()=>{
             const popularDiv=document.getElementById('popular');
             popularDiv.innerHTML='';
             const showContainer=document.createElement('div');
-            showContainer.classList.add('shows-container');
+            showContainer.classList.add('element-container');
             popularShow.forEach(show=>{
                 const releaseYear = show.first_air_date ? show.first_air_date.split('-')[0] : 'N/A';
                 const showElement=document.createElement('div');
-                showElement.classList.add('show');
+                showElement.classList.add('element');
                 const fontSize = calculateFontSize(show.name);
                 showElement.innerHTML = `
                     <div>

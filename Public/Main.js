@@ -10,11 +10,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 const trendingDiv = document.getElementById('Trending');
                 trendingDiv.innerHTML = '';
                 const moviesContainer = document.createElement('div');
-                moviesContainer.classList.add('movies-container'); // Add a class for styling
+                moviesContainer.classList.add('element-container'); // Add a class for styling
                 trendingMovies.forEach(movie => {
                     const releaseYear = movie.release_date ? movie.release_date.split('-')[0] : 'N/A';
                     const movieElement = document.createElement('div');
-                    movieElement.classList.add('movie');
+                    movieElement.classList.add('element');
                     // Adjust font size based on the length of the title
                     const fontSize = calculateFontSize(movie.title);
 
