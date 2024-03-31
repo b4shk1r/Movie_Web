@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 trendingDiv.innerHTML = '';
                 const moviesContainer = document.createElement('div');
                 moviesContainer.classList.add('movies-container'); // Add a class for styling
-
                 trendingMovies.forEach(movie => {
                     const releaseYear = movie.release_date ? movie.release_date.split('-')[0] : 'N/A';
                     const movieElement = document.createElement('div');
@@ -53,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const maxLength = 25; // Maximum length before reducing font size
         const baseFontSize = 25; // Base font size
         // Calculate font size based on title length
-        if (title.length <= maxLength) {
+        if (title||title.length <= maxLength) {
             return baseFontSize;
         } else {
             return Math.floor((maxLength / title.length) * baseFontSize);
