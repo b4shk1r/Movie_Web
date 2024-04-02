@@ -6,11 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="46bb10e9-766d-4923-be73-625a96c4455a" name="Changes" comment="Made the project">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Movie.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Public/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/Public/Main.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Public/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Public/Main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Public/Shows.html" beforeDir="false" afterPath="$PROJECT_DIR$/Public/Shows.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Public/Shows.js" beforeDir="false" afterPath="$PROJECT_DIR$/Public/Shows.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Public/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Public/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +72,7 @@
       <updated>1711341632813</updated>
       <workItem from="1711341633838" duration="8419000" />
       <workItem from="1711423283592" duration="9997000" />
-      <workItem from="1711716934525" duration="13546000" />
+      <workItem from="1711716934525" duration="17914000" />
     </task>
     <task id="LOCAL-00001" summary="Made the project">
       <option name="closed" value="true" />

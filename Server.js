@@ -21,6 +21,17 @@ app.get('/trending-movies', async (req, res) => {
         res.status(500).json({ error: 'Internal server error' });
     }
 });
+app.get('/latest-movie', async (req, res) => {
+    try {
+        const url = `https://api.themoviedb.org/3/movie/latest?api_key=${apiKey}`;
+        const response = await fetch(url);
+        const data = await response.json();
+        res.json(data);
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
 app.get('/popular-shows',async(req,res)=>{
     try{
         const page=req.query.page||1;
