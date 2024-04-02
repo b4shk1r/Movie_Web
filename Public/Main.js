@@ -31,8 +31,30 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .catch(error => console.error('Error fetching data:', error));
     }
-
+    function fetchLatestMovie(){
+        fetch(`/latest-movie`)
+            .then(response=>response.json())
+            .then(data=>{
+                const latestDiv=document.getElementById('top');
+                latestDiv.innerHTML='';
+                const latestContainer = document.createElement('div');
+                latestContainer.classList.add('top-container'); // Add a class for styling
+                const releaseYear = data.release_date ? data.release_date.split('-')[0] : 'N/A';
+                // Adjust font size based on the length of the title
+                const fontSize = calculateFontSize(data.title);
+                latestContainer.innerHTML = `
+                        <div>
+                            <div id="head"style="font-size: 20px;background-color: aqua;">Latest</div>
+                            <div id="title" style="font-size: ${fontSize}px;">${data.title}</div>
+                            <p>Release Year: ${releaseYear}</p>
+                            <img src="https://image.tmdb.org/t/p/w500/${data.poster_path}" alt="${data.title} Poster">
+                        </div>`;
+                latestDiv.appendChild(latestContainer);
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    }
     fetchTrendingMovies(currentPage);
+    fetchLatestMovie();
 
     // Event listener for previous page button
     document.getElementById('prevPage').addEventListener('click', () => {

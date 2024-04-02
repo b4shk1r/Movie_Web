@@ -2,7 +2,7 @@
     position: relative;
     display: inline-block;
     background-color: aqua;
-    width: 100%;
+    width: 75%;
 }
 .element-container {
     display: flex;
@@ -10,14 +10,14 @@
 }
 
 .element {
-    flex-basis: calc(50% - 20px); /* Adjust this value to control the width of each movie element */
+    flex-basis: calc(50% - 20px);
     margin: 10px;
     box-sizing: border-box;
 }
 
 .img {
-    max-width: 100%; /* Ensure movie posters don't exceed the width of their container */
-    height: auto; /* Maintain the aspect ratio of the movie posters */
+    max-width: 100%;
+    height: auto;
 }
 .options {
     display: none;
@@ -29,7 +29,26 @@
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     z-index: 1;
 }
+#top {
+     background-color: #f2f2f2;
+     border-radius: 10px;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+     width: 24%;
+     position: fixed;
+     top: 10px;
+     right: 10px;
+ }
 
+#top img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+#top div {
+    text-align: center;
+}
 .options a {
     display: block;
     padding: 10px;
