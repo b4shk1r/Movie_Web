@@ -7,7 +7,7 @@ const port = 3000;
 
 // Serve static files from the public directory
 app.use(express.static(path.join(__dirname, 'public')));
-const apiKey = 'a7de75d65d48cc545e8d1a0db6497c72';
+const apiKey = process.env.TMDB_API_KEY;
 
 app.get('/trending-movies', async (req, res) => {
     try {

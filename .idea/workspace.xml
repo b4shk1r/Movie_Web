@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="46bb10e9-766d-4923-be73-625a96c4455a" name="Changes" comment="Made the project">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Public/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/Public/Main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Public/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Public/Main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Public/Shows.html" beforeDir="false" afterPath="$PROJECT_DIR$/Public/Shows.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Public/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Public/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server.js" afterDir="false" />
@@ -40,22 +38,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/b4shk1r/Desktop/movie-web",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/b4shk1r/Desktop/movie-web&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Views" />
@@ -72,7 +70,8 @@
       <updated>1711341632813</updated>
       <workItem from="1711341633838" duration="8419000" />
       <workItem from="1711423283592" duration="9997000" />
-      <workItem from="1711716934525" duration="17914000" />
+      <workItem from="1711716934525" duration="18965000" />
+      <workItem from="1712113949820" duration="2908000" />
     </task>
     <task id="LOCAL-00001" summary="Made the project">
       <option name="closed" value="true" />
