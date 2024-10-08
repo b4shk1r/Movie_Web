@@ -28,7 +28,36 @@ document.addEventListener('DOMContentLoaded',()=>{
         })
             .catch(error => console.error('Error fetching data:', error));
     }
+    function fetchAiringToday() {
+        fetch('/airing-today')
+            .then(response => response.json())
+            .then(data => {
+                console.log('Airing Today Data:', data); // Inspect the data structure
+
+                const airingDiv = document.getElementById('top');
+                airingDiv.innerHTML = '';
+
+                // Assuming 'results' contains the list of shows
+                const show = data.results ? data.results[0] : null; // Get the first show or null if results are empty
+
+                if (show) {
+                    const airDate = show.first_air_date ? show.first_air_date.split('-')[0] : 'N/A';
+                    const fontSize = calculateFontSize(show.name);
+                    airingDiv.innerHTML = `
+                    <div>
+                        <div id="head" style="font-size: 20px; background-color: aqua;">Airing Today</div>
+                        <div id="title" style="font-size: ${fontSize}px;">${show.name}</div>
+                        <p>Release Year: ${airDate}</p>
+                        <img src="https://image.tmdb.org/t/p/w500/${show.poster_path}" alt="${show.name} Poster">
+                    </div>`;
+                } else {
+                    airingDiv.innerHTML = '<p>No shows available for today.</p>';
+                }
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    }
     fetchPopularShows(currentPage);
+    fetchAiringToday();
     document.getElementById('nextPage').addEventListener("click", ()=>{
         currentPage++;
         fetchPopularShows(currentPage);
