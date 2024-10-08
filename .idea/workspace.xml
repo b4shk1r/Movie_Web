@@ -5,11 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46bb10e9-766d-4923-be73-625a96c4455a" name="Changes" comment="Made the project">
+      <change afterPath="$PROJECT_DIR$/Public/Search.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Public/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/Public/Main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Public/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Public/Main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Public/Shows.html" beforeDir="false" afterPath="$PROJECT_DIR$/Public/Shows.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Public/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Public/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Public/Shows.js" beforeDir="false" afterPath="$PROJECT_DIR$/Public/Shows.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -71,7 +76,12 @@
       <workItem from="1711341633838" duration="8419000" />
       <workItem from="1711423283592" duration="9997000" />
       <workItem from="1711716934525" duration="18965000" />
-      <workItem from="1712113949820" duration="2908000" />
+      <workItem from="1712113949820" duration="4383000" />
+      <workItem from="1712293921320" duration="2728000" />
+      <workItem from="1723838206935" duration="1085000" />
+      <workItem from="1723932112594" duration="6814000" />
+      <workItem from="1725134791285" duration="2823000" />
+      <workItem from="1726013397736" duration="692000" />
     </task>
     <task id="LOCAL-00001" summary="Made the project">
       <option name="closed" value="true" />

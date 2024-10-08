@@ -56,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchTrendingMovies(currentPage);
     fetchLatestMovie();
 
+
     // Event listener for previous page button
     document.getElementById('prevPage').addEventListener('click', () => {
         if (currentPage > 1) {
