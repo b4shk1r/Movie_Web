@@ -34,6 +34,36 @@ app.get('/search', async (req, res) => {
     }
 });
 
+app.get('/movie-details', async (req, res) => {
+    try {
+        const id = req.query.id;
+        const type = req.query.type === 'tv' ? 'tv' : 'movie';
+        const url = `https://api.themoviedb.org/3/${type}/${id}?api_key=${apiKey}`;
+        const response = await fetch(url);
+        const data = await response.json();
+        res.json(data);
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
+app.get('/discover', async (req, res) => {
+    try {
+        const type = req.query.type === 'tv' ? 'tv' : 'movie';
+        const genre = req.query.genre || '';
+        const page = req.query.page || 1;
+        let url = `https://api.themoviedb.org/3/discover/${type}?api_key=${apiKey}&page=${page}&sort_by=popularity.desc`;
+        if (genre) url += `&with_genres=${genre}`;
+        const response = await fetch(url);
+        const data = await response.json();
+        res.json(data);
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
 app.get('/trending-movies', async (req, res) => {
     try {
         const page = req.query.page || 1;

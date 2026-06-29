@@ -1,63 +1,51 @@
 document.addEventListener('DOMContentLoaded', () => {
-    let currentPage = 1; // Initialize current page
+    let currentPage = 1;
 
-    // Function to fetch trending movies based on page number
     function fetchTrendingMovies(page) {
         fetch(`/trending-movies?page=${page}`)
             .then(response => response.json())
             .then(data => {
-                const trendingMovies = data.results;
+                const trendingMovies = data.results.slice(0, 18);
                 const trendingDiv = document.getElementById('Trending');
                 trendingDiv.innerHTML = '';
                 const moviesContainer = document.createElement('div');
-                moviesContainer.classList.add('element-container'); // Add a class for styling
+                moviesContainer.classList.add('element-container');
                 trendingMovies.forEach(movie => {
                     const releaseYear = movie.release_date ? movie.release_date.split('-')[0] : 'N/A';
                     const movieElement = document.createElement('div');
                     movieElement.classList.add('element');
-                    // Adjust font size based on the length of the title
-                    const fontSize = calculateFontSize(movie.title);
-
                     movieElement.innerHTML = `
-                        <div>
-                            <div id="title" style="font-size: ${fontSize}px;">${movie.title}</div>
-                            <p>Release Year: ${releaseYear}</p>
-                            <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt="${movie.title} Poster">
+                        <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt="${movie.title} Poster">
+                        <div class="card-overlay">
+                            <div class="card-title">${movie.title}</div>
+                            <div class="card-year">${releaseYear}</div>
                         </div>`;
+                    movieElement.addEventListener('click', () => openModal(movie.id, 'movie'));
                     moviesContainer.appendChild(movieElement);
                 });
-
                 trendingDiv.appendChild(moviesContainer);
             })
             .catch(error => console.error('Error fetching data:', error));
     }
-    function fetchLatestMovie(){
+
+    function fetchLatestMovie() {
         fetch(`/latest-movie`)
-            .then(response=>response.json())
-            .then(data=>{
-                const latestDiv=document.getElementById('top');
-                latestDiv.innerHTML='';
-                const latestContainer = document.createElement('div');
-                latestContainer.classList.add('top-container'); // Add a class for styling
+            .then(response => response.json())
+            .then(data => {
+                const latestDiv = document.getElementById('top');
                 const releaseYear = data.release_date ? data.release_date.split('-')[0] : 'N/A';
-                // Adjust font size based on the length of the title
-                const fontSize = calculateFontSize(data.title);
-                latestContainer.innerHTML = `
-                        <div>
-                            <div id="head"style="font-size: 20px;background-color: aqua;">Latest</div>
-                            <div id="title" style="font-size: ${fontSize}px;">${data.title}</div>
-                            <p>Release Year: ${releaseYear}</p>
-                            <img src="https://image.tmdb.org/t/p/w500/${data.poster_path}" alt="${data.title} Poster">
-                        </div>`;
-                latestDiv.appendChild(latestContainer);
+                latestDiv.innerHTML = `
+                    <div class="sidebar-label">Latest</div>
+                    <div class="sidebar-title">${data.title}</div>
+                    <div class="sidebar-year">${releaseYear}</div>
+                    <img class="sidebar-poster" src="https://image.tmdb.org/t/p/w500/${data.poster_path}" alt="${data.title} Poster">`;
             })
             .catch(error => console.error('Error fetching data:', error));
     }
+
     fetchTrendingMovies(currentPage);
     fetchLatestMovie();
 
-
-    // Event listener for previous page button
     document.getElementById('prevPage').addEventListener('click', () => {
         if (currentPage > 1) {
             currentPage--;
@@ -65,20 +53,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Event listener for next page button
     document.getElementById('nextPage').addEventListener('click', () => {
         currentPage++;
         fetchTrendingMovies(currentPage);
     });
-
-    function calculateFontSize(title) {
-        const maxLength = 25; // Maximum length before reducing font size
-        const baseFontSize = 25; // Base font size
-        // Calculate font size based on title length
-        if (title||title.length <= maxLength) {
-            return baseFontSize;
-        } else {
-            return Math.floor((maxLength / title.length) * baseFontSize);
-        }
-    }
 });
