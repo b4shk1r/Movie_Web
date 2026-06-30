@@ -1,13 +1,28 @@
 const express = require('express');
 const fetch = require('node-fetch');
 const path = require('path');
+const cookieParser = require('cookie-parser');
 const app = express();
 const port = 3000;
 require('dotenv').config();
 
-// Serve static files from the public directory
+require('./db');
+const { attachUser } = require('./middleware/auth');
+const authRoutes = require('./routes/auth');
+const likesRoutes = require('./routes/likes');
+const commentsRoutes = require('./routes/comments');
+
+if (!process.env.JWT_SECRET) throw new Error('JWT_SECRET environment variable is not set');
+
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.json());
+app.use(cookieParser());
+app.use(attachUser);
 const apiKey = process.env.TMDB_API_KEY;
+
+app.use('/api/auth', authRoutes);
+app.use('/api/likes', likesRoutes);
+app.use('/api/comments', commentsRoutes);
 
 // Search for movies and TV shows
 app.get('/search', async (req, res) => {
