@@ -14,7 +14,7 @@ const commentsRoutes = require('./routes/comments');
 
 if (!process.env.JWT_SECRET) throw new Error('JWT_SECRET environment variable is not set');
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'Public')));
 app.use(express.json());
 app.use(cookieParser());
 app.use(attachUser);
