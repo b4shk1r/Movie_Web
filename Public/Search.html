@@ -10,6 +10,7 @@
 <div class="container">
     <a href="Shows.html"><button>TV Shows</button></a>
     <a href="Main.html"><button>Movies</button></a>
+    <div class="auth-area" id="authArea"></div>
 </div>
 <div class="page-layout">
     <div class="list">
@@ -30,6 +31,25 @@
         <div class="elem-container" id="Results"></div>
     </div>
 </div>
+<div id="authModal" class="modal-overlay" hidden>
+    <div class="modal-box auth-box">
+        <button class="modal-close" id="authModalClose">&times;</button>
+        <div class="auth-tabs">
+            <button class="auth-tab active" id="loginTab">Log In</button>
+            <button class="auth-tab" id="signupTab">Sign Up</button>
+        </div>
+        <form id="authForm" class="auth-form">
+            <p class="auth-error" id="authError" hidden></p>
+            <label class="auth-label">Email
+                <input type="email" id="authEmail" autocomplete="email" required>
+            </label>
+            <label class="auth-label">Password
+                <input type="password" id="authPassword" autocomplete="current-password" minlength="8" required>
+            </label>
+            <button type="submit" class="auth-submit" id="authSubmit">Log In</button>
+        </form>
+    </div>
+</div>
 <div id="movieModal" class="modal-overlay" hidden>
     <div class="modal-box">
         <button class="modal-close" id="modalClose">&times;</button>
@@ -40,11 +60,27 @@
                 <h2 class="modal-title" id="modalTitle"></h2>
                 <div class="modal-meta" id="modalMeta"></div>
                 <div class="modal-genres" id="modalGenres"></div>
+                <button class="like-button" id="likeButton">
+                    <span class="like-icon">&#9825;</span>
+                    <span id="likeCount">0</span>
+                </button>
                 <p class="modal-overview" id="modalOverview"></p>
             </div>
         </div>
+        <div class="comments-section">
+            <h3 class="comments-heading">Comments</h3>
+            <form id="commentForm" class="comment-form" hidden>
+                <textarea id="commentInput" placeholder="Write a comment..." maxlength="1000"></textarea>
+                <button type="submit">Post</button>
+            </form>
+            <p class="comment-login-hint" id="commentLoginHint">
+                <a href="#" id="commentLoginLink">Log in</a> to leave a comment.
+            </p>
+            <div id="commentsList" class="comments-list"></div>
+        </div>
     </div>
 </div>
+<script src="auth.js"></script>
 <script src="modal.js"></script>
 <script src="Search.js"></script>
 </body>
