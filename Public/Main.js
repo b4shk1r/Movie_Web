@@ -39,6 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="sidebar-title">${data.title}</div>
                     <div class="sidebar-year">${releaseYear}</div>
                     <img class="sidebar-poster" src="https://image.tmdb.org/t/p/w500/${data.poster_path}" alt="${data.title} Poster">`;
+                latestDiv.style.cursor = 'pointer';
+                latestDiv.onclick = () => openModal(data.id, 'movie');
             })
             .catch(error => console.error('Error fetching data:', error));
     }

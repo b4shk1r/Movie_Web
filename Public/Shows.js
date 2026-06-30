@@ -41,6 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="sidebar-title">${show.name}</div>
                         <div class="sidebar-year">${airDate}</div>
                         <img class="sidebar-poster" src="https://image.tmdb.org/t/p/w500/${show.poster_path}" alt="${show.name} Poster">`;
+                    airingDiv.style.cursor = 'pointer';
+                    airingDiv.onclick = () => openModal(show.id, 'tv');
                 } else {
                     airingDiv.innerHTML = '<p style="padding: 14px; color: #9ca3af;">No shows available for today.</p>';
                 }
